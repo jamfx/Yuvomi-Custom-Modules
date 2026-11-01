@@ -1,0 +1,34 @@
+{
+  "manifestVersion": 1,
+  "id": "countdown",
+  "name": "Countdowns",
+  "version": "1.3.1",
+  "entry": "index.js",
+  "style": "style.css",
+  "accent": "#E8710A",
+  "menu": {
+    "show": true,
+    "label": "Countdowns",
+    "icon": "hourglass",
+    "order": 90
+  },
+  "page": {
+    "composition": "reading",
+    "width": "content"
+  },
+  "capabilities": {
+    "permissions": {
+      "module": "ext:countdown"
+    },
+    "widgets": [
+      {
+        "id": "next",
+        "entry": "widget.js",
+        "defaultSize": "2x2",
+        "optionsSchema": {
+          "limit": { "type": "number" }
+        }
+      }
+    ]
+  }
+}

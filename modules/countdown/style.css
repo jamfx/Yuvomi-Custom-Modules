@@ -1,0 +1,379 @@
+/* Countdown-Modul. Wird für Seite und Dashboard-Widget geladen. */
+
+.cd-root,
+.cd-widget {
+  --cd-accent: #e8710a;
+  --cd-soon: #c62828;
+  --cd-ok: #2e7d32;
+  --cd-muted: #6b665e;
+  box-sizing: border-box;
+}
+
+.cd-root *,
+.cd-widget * {
+  box-sizing: border-box;
+}
+
+.cd-icon {
+  flex: none;
+}
+
+/* ---------- Seite ---------- */
+
+.cd-root {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cd-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.cd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cd-section__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.cd-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, currentColor 60%, transparent);
+}
+
+.cd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cd-empty {
+  margin: 0;
+  padding: 1rem 0;
+  color: color-mix(in srgb, currentColor 60%, transparent);
+}
+
+.cd-msg {
+  margin: 0;
+  color: var(--cd-soon);
+}
+
+/* ---------- Karten ---------- */
+
+.cd-card,
+.cd-form {
+  background: #fff;
+  color: #1f1b16;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 4px 14px rgb(0 0 0 / 0.05);
+}
+
+.cd-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
+}
+
+.cd-card--past {
+  opacity: 0.6;
+}
+
+.cd-card__body {
+  min-width: 0;
+}
+
+.cd-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.cd-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, currentColor 65%, transparent);
+}
+
+.cd-card__weeks {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, currentColor 50%, transparent);
+}
+
+.cd-card__tools {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cd-emoji {
+  margin-right: 0.4rem;
+}
+
+/* ---------- Zahlen-Kachel ---------- */
+
+.cd-count {
+  --c: var(--cd-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.1;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 13%, transparent);
+}
+
+.cd-count--soon {
+  --c: var(--cd-soon);
+}
+
+.cd-count--today,
+.cd-count--live {
+  --c: var(--cd-ok);
+}
+
+.cd-count--past {
+  --c: var(--cd-muted);
+}
+
+.cd-count__big {
+  font-size: 2rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.cd-count__big--word {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cd-count__unit,
+.cd-count__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.cd-count__label {
+  margin-bottom: 0.15rem;
+}
+
+/* ---------- Formular ---------- */
+
+.cd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.25rem;
+}
+
+.cd-form__row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem;
+}
+
+.cd-form__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cd-field__label {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, currentColor 65%, transparent);
+}
+
+.cd-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 12px;
+}
+
+.cd-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cd-btn {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cd-btn--primary {
+  color: #fff;
+  background: var(--cd-accent);
+  border-color: var(--cd-accent);
+}
+
+.cd-btn--small {
+  min-height: 36px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.cd-btn--danger {
+  color: var(--cd-soon);
+}
+
+.cd-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 36rem) {
+  .cd-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .cd-card__tools {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cd-card,
+  .cd-form {
+    background: #2a2723;
+    color: #f2efe9;
+    box-shadow: none;
+  }
+}
+
+/* ---------- Dashboard-Widget ---------- */
+
+.cd-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.cd-widget__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cd-widget__badge {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--cd-accent);
+}
+
+.cd-widget__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.cd-widget__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.75rem;
+}
+
+.cd-widget__grid > .cd-empty,
+.cd-widget__grid > .cd-msg {
+  grid-column: 1 / -1;
+  padding: 0;
+}
+
+.cd-widget__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+}
+
+.cd-widget .cd-count {
+  min-width: 4.75rem;
+  padding: 0.5rem 0.7rem;
+}
+
+.cd-widget .cd-count__big {
+  font-size: 1.6rem;
+}
+
+.cd-widget .cd-count__big--word {
+  font-size: 1rem;
+}
+
+.cd-widget__text {
+  min-width: 0;
+}
+
+.cd-widget__name,
+.cd-widget__date {
+  margin: 0;
+}
+
+.cd-widget__name {
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cd-widget__date {
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, currentColor 60%, transparent);
+}
