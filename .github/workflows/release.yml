@@ -1,0 +1,23 @@
+name: Release module
+on:
+  push:
+    tags: ['*-v[0-9]*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$GITHUB_REF_NAME"
+          id="${tag%-v[0-9]*}"
+          version="${tag##*-v}"
+          manifest="modules/$id/module.json"
+          test -f "$manifest" || { echo "Kein Modul $id"; exit 1; }
+          test "$(jq -r .version "$manifest")" = "$version" || { echo "Version im Tag und in module.json weichen ab"; exit 1; }
+          (cd modules && zip -r "../$id-$version.zip" "$id")
+          gh release create "$tag" "$id-$version.zip" --title "$id $version" --generate-notes
