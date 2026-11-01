@@ -6,7 +6,7 @@ These modules are community work and are not part of, or endorsed by, the Yuvomi
 
 | Module | What it does | Version |
 | --- | --- | --- |
-| [`countdown`](modules/countdown) | Countdowns to dates: shared ones from calendar events, personal ones per browser, plus a dashboard widget | 1.3.1 |
+| [`countdown`](modules/countdown) | Countdowns to dates: shared ones from calendar events, personal ones per browser, plus a dashboard widget | 1.3.2 |
 
 ## Countdown
 

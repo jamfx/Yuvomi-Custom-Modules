@@ -4,6 +4,10 @@ All notable changes to the modules in this repository. Versions are per module.
 
 ## countdown
 
+### 1.3.2
+
+- The dashboard widget now shows the name "Countdowns" with an hourglass icon in the widget picker instead of its internal id "next".
+
 ### 1.3.1
 
 - Emoji for shared countdowns via `#countdown:🏖️`. The marker, including a trailing colon, is removed from the displayed title.
