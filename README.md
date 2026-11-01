@@ -12,9 +12,9 @@ These modules are community work and are not part of, or endorsed by, the Yuvomi
 
 Counts the days until the next holiday, birthday or any other date, and shows them on a page and as a dashboard widget.
 
-![Countdown page with shared and personal countdowns](docs/countdown-page.jpg)
+<img src="docs/countdown-page.jpg" alt="Countdown page with shared and personal countdowns" width="640">
 
-![Countdown dashboard widget](docs/countdown-widget.jpg)
+<img src="docs/countdown-widget.jpg" alt="Countdown dashboard widget" width="320">
 
 
 - **Shared countdowns** come straight from the Yuvomi calendar. Add `#countdown` to the title or description of an event and everyone who can see that event sees the countdown. No extra service and no extra storage are needed.
